@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="127.0.0.1" id="a709d328-a691-46b2-b741-f5d67d57f9dd" name="localhost" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/home/max/PhpstormProjects/untitled" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
+</project>
