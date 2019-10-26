@@ -11,6 +11,7 @@
 //        "$k=".$old, "$k=".$uniqid, file_get_contents($path)
 //    ));
 //}
+
 //write to DB
 function write_DB($con, $sq, $name1)
 {
@@ -26,7 +27,7 @@ function write_DB($con, $sq, $name1)
         fclose($fp);
     }
 }
-
+//write changes to DB
 function write_DB_changes($con, $sq, $name1)
 {
     if (mysqli_query($con, $sq)) {
@@ -64,6 +65,7 @@ function conn_DB($name1)
         $fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/log.txt","a");
         fwrite($fp, $content);
         fclose($fp);}
+//    return $conn;
 }
 // Create connection mysql for hook
 function conn_DB_hook($name1)
@@ -87,6 +89,7 @@ function conn_DB_hook($name1)
         fwrite($fp, $content);
         fclose($fp);}
 }
+
 //   connect amocrm
 function conn_amo($d, $l, $name2)
 {

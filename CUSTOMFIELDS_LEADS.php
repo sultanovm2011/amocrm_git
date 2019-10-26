@@ -1,10 +1,10 @@
 <?php
-include 'functions.php';
-// read from .env
-require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
-$subdomain = getenv('SUBDOMAIN');
+//include 'functions.php';
+//// read from .env
+//require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+//$dotenv = Dotenv\Dotenv::create(__DIR__);
+//$dotenv->load();
+//$subdomain = getenv('SUBDOMAIN');
 $table_name = "customfields_leads";
 $table_name2 = "last_update_cust_leads";
 // Create connection mysql

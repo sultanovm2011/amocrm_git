@@ -1,27 +1,20 @@
 <?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-#define( 'WP_USE_THEMES', true );
-
-/** Loads the WordPress Environment and Template */
-//require( dirname( __FILE__ ) . '/wp-blog-header.php' );
-// $webhookContent = "";
-// $Response = fopen('php://input' , 'rb');
-// while (!feof($webhook)) { $webhookContent .= fread($webhook, 4096);}
-// fclose($webhook);
 function SyncData()
 {
     require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+    $dotenv = Dotenv\Dotenv::create(__DIR__);
+    $dotenv->load();
+    include 'functions.php';
+    global $conn;
+    global $subdomain;
+    global $out;
+    $subdomain = getenv('SUBDOMAIN');
+    $servername = getenv('DB_HOST');
+    $database = getenv('DB_DATABASE');
+    $username = getenv('DB_USER');
+    $password = getenv('DB_PASS');
+    $conn = mysqli_connect($servername, $username, $password, $database);
 
     require($_SERVER['DOCUMENT_ROOT'] . '/auth.php');
     sleep(30);
