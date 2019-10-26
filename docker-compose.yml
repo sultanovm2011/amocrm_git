@@ -1,0 +1,70 @@
+﻿# Пропишем версию
+version: '3.3'
+# Перечислим сервисы
+services:
+    nginx:
+# Пропишем какой образ мы хотим использовать
+        image: nginx:latest
+# Назовем свой контейнер по красивому
+        container_name: nginx
+# Проброс портов
+        ports:
+            - "80:80"
+            - "5555:5555"
+# Проброс папок
+        volumes:
+            - ./Nginx/core:/etc/nginx/conf.d
+            - ./Nginx/www:/var/www/
+            - ./Nginx/Logs:/var/log/nginx/
+            - ./Nginx/html:/usr/share/nginx/html/
+# Укажем зависимости
+        links:
+            - php
+
+    mysql:
+
+        image: mysql:latest
+
+        ports:
+            - "3306:3306"
+
+        container_name: mysql
+# Пропишем настройки, предлагаю использовать вместо mypassword более сложный пароль, он пренадлежит root
+        environment:
+
+            - MYSQL_ROOT_PASSWORD=77777777
+            - MYSQL_DATABASE=amocrm
+            - MYSQL_USER=max
+            - MYSQL_PASSWORD=77777777
+
+
+        volumes:
+            - ./MySQL:/var/lib/mysql
+
+
+    php:
+# Билдим с помощью dockerfile указав директорию где он лежит
+        build: ./PHP
+
+        container_name: php-fpm
+
+        volumes:
+            - ./Nginx/www:/var/www
+
+        links:
+            - mysql
+
+
+    phpmyadmin:
+
+        image: phpmyadmin/phpmyadmin
+
+        container_name: phpmyadmin
+
+        ports:
+
+            - 8090:80
+
+        links:
+            - mysql:db
+
