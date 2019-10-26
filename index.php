@@ -21,6 +21,8 @@
 // fclose($webhook);
 function SyncData()
 {
+    require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+
     require($_SERVER['DOCUMENT_ROOT'] . '/auth.php');
     sleep(30);
     require($_SERVER['DOCUMENT_ROOT'] . '/contacts.php');

@@ -7,9 +7,11 @@ $user = array(
 //    'USER_HASH' => 'd3a702849e7c59baf9746bc68cd50eac37f27436', #Хэш для доступа к API (смотрите в профиле пользователя)
 
 );
-// чтение config.ini
-$status_const = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . "/config.ini");
-$subdomain = $status_const['subdomain'];
+// read from .env
+require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+$subdomain = getenv('SUBDOMAIN');
 #Формируем ссылку для запроса
 $link = "https://$subdomain.amocrm.ru/private/api/auth.php?type=json";
 /* Нам необходимо инициировать запрос к серверу. Воспользуемся библиотекой cURL (поставляется в составе PHP). Вы также
