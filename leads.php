@@ -1,10 +1,10 @@
 <?php
-include 'functions.php';
-// read from .env
-require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
-$subdomain = getenv('SUBDOMAIN');
+//include 'functions.php';
+//// read from .env
+//require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+//$dotenv = Dotenv\Dotenv::create(__DIR__);
+//$dotenv->load();
+//$subdomain = getenv('SUBDOMAIN');
 $status_id_first_lesson = getenv('STATUS_ID_FIRST_LESSON');
 $status_id_is_paid = getenv('STATUS_ID_IS_PAID');
 $table_name = "leads";

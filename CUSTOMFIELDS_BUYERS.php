@@ -1,12 +1,13 @@
 <?php
-include 'functions.php';
-// read from .env
-require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
+//include 'functions.php';
+//// read from .env
+//require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+//$dotenv = Dotenv\Dotenv::create(__DIR__);
+//$dotenv->load();
+//$subdomain = getenv('SUBDOMAIN');
+
 $table_name = "customfields_buyers";
 $table_name2 = "last_update_cust_buyers";
-$subdomain = getenv('SUBDOMAIN');
 // Create connection mysql
 // Check connection mysql
 conn_DB($table_name);

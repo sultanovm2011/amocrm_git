@@ -1,5 +1,5 @@
 <?php
-#Массив с параметрами, которые нужно передать методом POST к API системы
+# Array with parameters to be passed using the POST method to the system API
 $user = array(
     'USER_LOGIN' => 'zigmund.online@gmail.com', #Ваш логин (электронная почта)
     'USER_HASH' => '9f1091da7b8bf222c189b6a76ca05472bfa28ade', #Хэш для доступа к API (смотрите в профиле пользователя)
@@ -8,10 +8,10 @@ $user = array(
 
 );
 // read from .env
-require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
-$subdomain = getenv('SUBDOMAIN');
+//require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+//$dotenv = Dotenv\Dotenv::create(__DIR__);
+//$dotenv->load();
+//$subdomain = getenv('SUBDOMAIN');
 #Формируем ссылку для запроса
 $link = "https://$subdomain.amocrm.ru/private/api/auth.php?type=json";
 /* Нам необходимо инициировать запрос к серверу. Воспользуемся библиотекой cURL (поставляется в составе PHP). Вы также
