@@ -4,9 +4,6 @@
 //    'USER_LOGIN' => 'zigmund.online@gmail.com', #Your login(email)
 //    'USER_HASH' => '9f1091da7b8bf222c189b6a76ca05472bfa28ade', #Hash for accessing the API (see user profile)
 //);
-//require($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-//$dotenv = Dotenv\Dotenv::create(__DIR__);
-//$dotenv->load();
 $USER_LOGIN = getenv('USER_LOGIN');
 $USER_HASH = getenv('USER_HASH');
 $user = array(
