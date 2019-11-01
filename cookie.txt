@@ -4,4 +4,4 @@
 
 #HttpOnly_.amocrm.ru	TRUE	/	TRUE	0	session_id	i6ms04o7gqi06o18srrphq31r2glck2975nl0apckrk2u0t5iod0
 #HttpOnly_.amocrm.com	TRUE	/	TRUE	0	session_id	6qunro2ivc1ljf9hgqrb8jr139ot16t19o4adun6m49q3k11j871
-.amocrm.ru	TRUE	/	FALSE	1729969715	user_lang	ru
+.amocrm.ru	TRUE	/	FALSE	1730482698	user_lang	ru
